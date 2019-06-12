@@ -1,0 +1,16 @@
+.banner{
+    color:white;
+    text-align: center;
+    background-color: black;
+    margin-bottom: 2px;
+}
+.calinput input { 
+    font-size: 30px;
+}
+.tile {
+    float: left;
+    border: 1px solid;
+    margin: 8px;
+    padding: 4px;
+
+ }
