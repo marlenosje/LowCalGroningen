@@ -1,22 +1,27 @@
 var mockUpMenuGegevens = [
 	{
 		MenuNaam: "Tagliatelli",
+		AantalCalorien: 300,
 		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Tagliatelli2",
+		AantalCalorien: 200,
 		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Tagliatelli3",
+		AantalCalorien: 600,
 		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Tagliatelli4",
+		AantalCalorien: 300,
 		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Tagliatelli5",
+		AantalCalorien: 100,
 		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
 		RestaurantNaam: "Giovanni"
 	},
@@ -52,22 +57,38 @@ function uitgebreidZoeken() { // toggle
 }
 function onload() {
 	verbergOpties();
-	menuGegevensOphalen();
-	//populateTiles(mockUpMenuGegevens);
+	//menuGegevensOphalen();
+	populateTiles(mockUpMenuGegevens);
 }
 function menuGegevensOphalen() {
 	$.get(lowCalGroningenUrl, function (data) {
 		console.log(data);
-		//var menugegevens = data.liveweer[0];
 		//populateTiles(menugegevens);
 	});
 }
 function populateTiles(menugegevens) {
 	console.log(menugegevens);
 	//var container = document.getElementById ("tilesContainer");
-	console.log(menugegevens[0]);
-	for (var i = 0; i < menugegevens.lenght; i++) {
+	//console.log(menugegevens[0]);
+	for (var i = 0; i < 5; i++) {
 		console.log(menugegevens[i]);
+		var tile = document.createElement('div');
+		tile.className='tile';
+		//tile.appendChild(document.createTextNode('Restaurant Halleluja'));
+		var naamMenu = document.createElement('div');
+		naamMenu.className = 'naamMenu';
+		naamMenu.appendChild(document.createTextNode(menugegevens[i].MenuNaam));
+		tile.appendChild(naamMenu);
+
+		var aantalCalorien = document.createElement('div');
+		aantalCalorien.id = 'aantal-calorien';
+		aantalCalorien.appendChild(document.createTextNode(menugegevens[i].AantalCalorien));
+		tile.appendChild(aantalCalorien);
+		
+		var plaatje = document.createElement('img');
+		plaatje.src = menugegevens[i].MenuPlaatjeUrl;
+		tile.appendChild(plaatje);
+		document.getElementById("tilesContainer").appendChild(tile);		
 	}
 }
 function verbergOpties() {
@@ -88,26 +109,6 @@ function uitgebreidZoeken() { // toggle
 		verbergOpties();
 	} else {
 		toonOpties();
-	}
-}
-function onload() {
-	verbergOpties();
-	//menuGegevensOphalen();
-	populateTiles(mockUpMenuGegevens);
-}
-function menuGegevensOphalen() {
-	$.get(lowCalGroningenUrl, function (data) {
-		var menugegevens = data.liveweer[0];
-		populateTiles(menugegevens);
-	});
-}
-function populateTiles(menugegevens) {
-	console.log(menugegevens);
-	//var container = document.getElementById ("tilesContainer");
-	console.log(menugegevens[0]);
-	for (var i = 0; i < menugegevens.lenght; i++) {
-		console.log(menugegevens[i]);
-
 	}
 }
 function selecteerAlles() {
