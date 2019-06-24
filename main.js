@@ -21,7 +21,8 @@ var mockUpMenuGegevens = [
 	RestaurantNaam: "Giovanni"
 },
 ]
-var lowCalGroningenUrl = "https://meteoserver.nl/api/liveweer.php?lat=52.1052957&long=5.1806729&key=02462ed844"; 
+var lowCalGroningenUrl = "https://localhost:5001/api/values";
+//"https://meteoserver.nl/api/liveweer.php?lat=52.1052957&long=5.1806729&key=02462ed844"; 
 
 function submitCal() {
   console.log (document.getElementById("invoer-calorieen").value);
@@ -51,13 +52,14 @@ function uitgebreidZoeken() { // toggle
 }
 function onload() {
 	verbergOpties();
-	//menuGegevensOphalen();
-	populateTiles(mockUpMenuGegevens);
+	menuGegevensOphalen();
+	//populateTiles(mockUpMenuGegevens);
 }
 function menuGegevensOphalen() {
 	$.get (lowCalGroningenUrl, function(data) {
-		var menugegevens = data.liveweer[0];
-		populateTiles(menugegevens);
+		console.log(data);
+		//var menugegevens = data.liveweer[0];
+		//populateTiles(menugegevens);
 	});
 }
 function populateTiles(menugegevens) {
