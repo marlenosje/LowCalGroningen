@@ -16,9 +16,12 @@ namespace LowCalAPI.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Menu>> GetAll()
+        public ActionResult<IEnumerable<Entities.Menu>> GetAll()
         {
-            var menus = MydbContext.Instance.Menus.ToList();
+            var menus = MydbContext.Instance.Menus
+                //.Include(m => m.Restaurant)
+                .ToList();
+
             return menus;
            
             
