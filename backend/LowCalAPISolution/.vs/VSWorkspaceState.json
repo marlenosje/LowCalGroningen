@@ -3,6 +3,7 @@
     "",
     "\\LowCalAPI",
     "\\LowCalAPI\\Controllers",
+    "\\LowCalAPI\\Entities",
     "\\LowCalAPI\\Properties"
   ],
   "SelectedNode": "\\LowCalAPISolution.sln",

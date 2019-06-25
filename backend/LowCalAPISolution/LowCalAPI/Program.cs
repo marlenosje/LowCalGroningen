@@ -18,7 +18,6 @@ namespace LowCalAPI
         {
             CreateWebHostBuilder(args).Build().Run();
 
-            
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
