@@ -12,23 +12,26 @@ namespace LowCalAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class RestaurantsController : ControllerBase
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<Entities.Menu>> GetAll()
+        public ActionResult<IEnumerable<Entities.Restaurant>> GetAllRestaurants()
         {
-            var menus = MydbContext.Instance.Menus
-                //.Include(m => m.Restaurant)
+            var restaurants = MydbContext.Instance.Restaurants
                 .ToList();
 
-            return menus;
-           
-            
+            return restaurants;
+        }
+
+        [HttpGet("{restaurantId}")]
+        public ActionResult<IEnumerable<Entities.Restaurant>> GetRestaurant(int restaurantId)
+        {
+            return MydbContext.Instance.Restaurants.Where(r => r.Id == restaurantId).ToList();
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet("{calorieen}")]
         public ActionResult<string> Get(int id)
         {
             return "value";
