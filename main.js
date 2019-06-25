@@ -29,8 +29,12 @@ var mockUpMenuGegevens = [
 var lowCalGroningenUrl = "https://localhost:5001/api/values";
 //"https://meteoserver.nl/api/liveweer.php?lat=52.1052957&long=5.1806729&key=02462ed844"; 
 
+var restaurantsOphalenUrl = "https://localhost:5001/api/restaurants";
+
 function submitCal() {
 	console.log(document.getElementById("invoer-calorieen").value);
+	var calorieen = document.getElementById("invoer-calorieen").value;
+	menuGegevensOphalen(calorieen);
 }
 function showValue(id, value) {
 	document.getElementById(id).textContent = value;
@@ -58,12 +62,18 @@ function uitgebreidZoeken() { // toggle
 function onload() {
 	verbergOpties();
 	//menuGegevensOphalen();
+	restaurantsOphalen();
 	populateTiles(mockUpMenuGegevens);
 }
-function menuGegevensOphalen() {
-	$.get(lowCalGroningenUrl, function (data) {
+function restaurantsOphalen() {
+	$.get(restaurantsOphalenUrl, function (data) {
 		console.log(data);
-		//populateTiles(menugegevens);
+	});
+}
+function menuGegevensOphalen(calorieen) {
+	$.get(lowCalGroningenUrl + calorieen, function (data) {
+		console.log(data);
+		populateTiles(data);
 	});
 }
 function populateTiles(menugegevens) {
