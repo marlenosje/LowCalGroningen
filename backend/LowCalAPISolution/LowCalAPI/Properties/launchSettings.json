@@ -24,7 +24,7 @@
     "LowCalAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/restaurants", 
+      "launchUrl": "api/menus", 
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

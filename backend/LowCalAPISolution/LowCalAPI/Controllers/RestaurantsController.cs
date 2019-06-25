@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LowCalAPI.Entities;
-using Newtonsoft.Json;
 
 
 namespace LowCalAPI.Controllers
