@@ -75,6 +75,10 @@ namespace LowCalAPI.Entities
                 entity.Property(e => e.Voorgerecht)
                     .HasColumnName("voorgerecht")
                     .HasMaxLength(100);
+
+                entity.Property(e => e.menuPlaatjeUrl)
+                    .HasColumnName("menuPlaatjeUrl")
+                    .HasMaxLength(255);
             });
 
             modelBuilder.Entity<Restaurant>(entity =>

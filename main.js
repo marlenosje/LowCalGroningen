@@ -1,28 +1,28 @@
 var mockUpMenuGegevens = [
 	{
 		MenuNaam: "Oosters",
-		AantalCalorien: 300,
-		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_960_720.jpg",
+		calorieen: 300,
+		menuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Italiaans",
-		AantalCalorien: 200,
-		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2017/10/06/17/43/noodles-2823942_960_720.jpg",
+		calorieen: 200,
+		menuPlaatjeUrl: "https://cdn.pixabay.com/photo/2017/10/06/17/43/noodles-2823942_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Australisch",
-		AantalCalorien: 600,
-		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/09/14/11/12/food-3676796_960_720.jpg",
+		calorieen: 600,
+		menuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/09/14/11/12/food-3676796_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Mexicaans",
-		AantalCalorien: 300,
-		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795__340.jpg",
+		calorieen: 300,
+		menuPlaatjeUrl: "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795__340.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
 		MenuNaam: "Frans",
-		AantalCalorien: 100,
-		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2015/05/02/06/47/gourmet-749562__340.jpg",
+		calorieen: 100,
+		menuPlaatjeUrl: "https://cdn.pixabay.com/photo/2015/05/02/06/47/gourmet-749562__340.jpg",
 		RestaurantNaam: "Giovanni"
 	},
 ]
@@ -74,31 +74,33 @@ function menuGegevensOphalen(calorieen) {
 	$.get(lowCalGroningenUrl + calorieen, function (data) {
 		console.log(data);
 		populateTiles(data);
-	});
+		});
 }
 function populateTiles(menugegevens) {
-	console.log(menugegevens);
+	//console.log(menugegevens);
 	//var container = document.getElementById ("tilesContainer");
 	//console.log(menugegevens[0]);
-	for (var i = 0; i < 5; i++) {
+	console.log (menugegevens.length)
+	for (var i = 0; i < menugegevens.length; i++) {
 		var menu = menugegevens[i];
+		console.log(menu)
 		var tile = document.createElement('div');
 		tile.className='tile';
 		//tile.appendChild(document.createTextNode('Restaurant Halleluja'));
 		var naamMenu = document.createElement('div');
 		naamMenu.className = 'naamMenu';
-		naamMenu.appendChild(document.createTextNode(menu.MenuNaam));
+		naamMenu.appendChild(document.createTextNode(menu.menuNaam));
 		tile.appendChild(naamMenu);
 
-		var aantalCalorien = document.createElement('div');
-		aantalCalorien.id = 'aantal-calorien';
-		aantalCalorien.appendChild(document.createTextNode(menu.AantalCalorien));
-		tile.appendChild(aantalCalorien);
+		var calorieen = document.createElement('div');
+		calorieen.id = 'aantal-calorien';
+		calorieen.appendChild(document.createTextNode(menu.calorieen));
+		tile.appendChild(calorieen);
 		
 		var imgContainer = document.createElement('div');
 		imgContainer.className = 'imgContainer';
 		var plaatje = document.createElement('img');
-		plaatje.src = menu.MenuPlaatjeUrl;
+		plaatje.src = menu.menuPlaatjeUrl;
 		imgContainer.appendChild(plaatje);
 		tile.appendChild(imgContainer);
 		document.getElementById("tilesContainer").appendChild(tile);	

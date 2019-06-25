@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LowCalAPI.Entities;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace LowCalAPI.Controllers
@@ -17,6 +18,7 @@ namespace LowCalAPI.Controllers
         public ActionResult<IEnumerable<Entities.Menu>> Get(int calorieen)
         {
             var menus = MydbContext.Instance.Menus
+                .Include(m => m.Restaurant)
                 .Where(m => m.Calorieen <= calorieen)
                 .OrderByDescending (m => m.Calorieen)
                 .ToList();
