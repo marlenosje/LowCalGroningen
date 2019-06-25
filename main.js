@@ -26,7 +26,7 @@ var mockUpMenuGegevens = [
 		RestaurantNaam: "Giovanni"
 	},
 ]
-var lowCalGroningenUrl = "https://localhost:5001/api/values";
+var lowCalGroningenUrl = "https://localhost:5001/api/menus/";
 //"https://meteoserver.nl/api/liveweer.php?lat=52.1052957&long=5.1806729&key=02462ed844"; 
 
 var restaurantsOphalenUrl = "https://localhost:5001/api/restaurants";
@@ -63,7 +63,7 @@ function onload() {
 	verbergOpties();
 	//menuGegevensOphalen();
 	restaurantsOphalen();
-	populateTiles(mockUpMenuGegevens);
+	// populateTiles(mockUpMenuGegevens);
 }
 function restaurantsOphalen() {
 	$.get(restaurantsOphalenUrl, function (data) {
