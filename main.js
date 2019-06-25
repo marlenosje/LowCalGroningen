@@ -81,24 +81,27 @@ function populateTiles(menugegevens) {
 	//var container = document.getElementById ("tilesContainer");
 	//console.log(menugegevens[0]);
 	for (var i = 0; i < 5; i++) {
-		console.log(menugegevens[i]);
+		var menu = menugegevens[i];
 		var tile = document.createElement('div');
 		tile.className='tile';
 		//tile.appendChild(document.createTextNode('Restaurant Halleluja'));
 		var naamMenu = document.createElement('div');
 		naamMenu.className = 'naamMenu';
-		naamMenu.appendChild(document.createTextNode(menugegevens[i].MenuNaam));
+		naamMenu.appendChild(document.createTextNode(menu.MenuNaam));
 		tile.appendChild(naamMenu);
 
 		var aantalCalorien = document.createElement('div');
 		aantalCalorien.id = 'aantal-calorien';
-		aantalCalorien.appendChild(document.createTextNode(menugegevens[i].AantalCalorien));
+		aantalCalorien.appendChild(document.createTextNode(menu.AantalCalorien));
 		tile.appendChild(aantalCalorien);
 		
+		var imgContainer = document.createElement('div');
+		imgContainer.className = 'imgContainer';
 		var plaatje = document.createElement('img');
-		plaatje.src = menugegevens[i].MenuPlaatjeUrl;
-		tile.appendChild(plaatje);
-		document.getElementById("tilesContainer").appendChild(tile);		
+		plaatje.src = menu.MenuPlaatjeUrl;
+		imgContainer.appendChild(plaatje);
+		tile.appendChild(imgContainer);
+		document.getElementById("tilesContainer").appendChild(tile);	
 	}
 }
 function verbergOpties() {
