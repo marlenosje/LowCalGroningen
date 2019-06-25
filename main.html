@@ -25,7 +25,7 @@
         <td class="inhoud">
             <div class="calInput">
                 <legend>Aantal calorieën</legend>
-                    <input type="number" id="invoer-calorieen" value=""><br>
+                    <input type="number" id="invoer-calorieen" value="" placeholder="Voer calorieën in"><br>
                         
                         <button class="okButton"onclick="submitCal()">Ok</button>
             <!-- uitgebreid zoeken-->            
@@ -43,9 +43,9 @@
                                 <label for="bezorgen">Bezorgen</label>
                                 <button class="selecteerButton" onclick="selecteerAlles()">Selecteer alles</button> 
                             </div>
-                                <div class="filterEenheden" id="keuzeOptiesBedrag">Prijs<input type="number" name="bedrag">
-                                    <div id="keuzeOptiesKilometers">Afstand<input type="number" name="kilometers">
-                                        <div id="keuzeOptiesSoortKeuken">Soort keuken:
+                                <div class="filterEenheden" id="keuzeOptiesBedrag">Prijs<br><input type="number" name="bedrag" placeholder="Voer prijs in">
+                                    <div id="keuzeOptiesKilometers">Afstand<br><input type="number" name="kilometers" placeholder="Voer afstand in">
+                                        <div class= "typeKeuken" id="keuzeOptiesSoortKeuken">Soort keuken:<br>
                                             <select name="soortKeuken">
                                                 <option value="italiaans">Italiaans</option>
                                                 <option value="chinees">Chinees</option>
@@ -67,7 +67,6 @@
                 </div>
                 <!-- einde alle tegels-->
         </td>
-
  <!-- Einde Main inhoud -->
 
 <!--Vaste footer -->

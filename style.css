@@ -1,5 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  /*background-color: #6a534d;*/
+  background-color: #fff9c1; 
 }
 .banner {
   font-size: 50px;
@@ -33,7 +35,7 @@ body {
   background-color: white;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+ }
 .tile img {
   width: 240px;
 }
@@ -74,9 +76,15 @@ margin: 0;
 .filters{
   font-size: 25px;
 }
+.typeKeuken select {
+  font-size: 20px;
+  
+}
 .filterEenheden {
+  font-size: 20px;
   font-weight: normal;
   text-align: left;
+  margin-right: 30px;
 }
 .keuzeCheckbox {
   font-weight: normal;
