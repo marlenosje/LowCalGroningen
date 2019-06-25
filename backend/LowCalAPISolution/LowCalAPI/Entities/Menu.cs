@@ -14,6 +14,7 @@ namespace LowCalAPI.Entities
         public int Calorieen { get; set; }
         public decimal Prijs { get; set; }
         public int? RestaurantId { get; set; }
+        public string menuPlaatjeUrl { get; set;}
        
         [ForeignKey(nameof(RestaurantId))]
         public virtual Restaurant Restaurant { get; set; }
