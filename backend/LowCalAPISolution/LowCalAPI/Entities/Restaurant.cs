@@ -7,7 +7,7 @@ namespace LowCalAPI.Entities
     {
         public Restaurant()
         {
-            Menus = new HashSet<Menu>();
+            
         }
 
         public int Id { get; set; }
@@ -19,6 +19,6 @@ namespace LowCalAPI.Entities
         public string Website { get; set; }
         public string Facebook { get; set; }
         public string Keuken { get; set; }
-        public virtual ICollection<Menu> Menus { get; set; }
+       
     }
 }

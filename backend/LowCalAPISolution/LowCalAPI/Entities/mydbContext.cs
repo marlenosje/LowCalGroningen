@@ -75,11 +75,6 @@ namespace LowCalAPI.Entities
                 entity.Property(e => e.Voorgerecht)
                     .HasColumnName("voorgerecht")
                     .HasMaxLength(100);
-
-                entity.HasOne(d => d.Restaurant)
-                    .WithMany(p => p.Menus)
-                    .HasForeignKey(d => d.RestaurantId)
-                    .HasConstraintName("menu_ibfk_1");
             });
 
             modelBuilder.Entity<Restaurant>(entity =>
