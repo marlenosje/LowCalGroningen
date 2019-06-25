@@ -1,28 +1,28 @@
 var mockUpMenuGegevens = [
 	{
-		MenuNaam: "Tagliatelli",
+		MenuNaam: "Oosters",
 		AantalCalorien: 300,
-		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
+		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
-		MenuNaam: "Tagliatelli2",
+		MenuNaam: "Italiaans",
 		AantalCalorien: 200,
-		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
+		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2017/10/06/17/43/noodles-2823942_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
-		MenuNaam: "Tagliatelli3",
+		MenuNaam: "Australisch",
 		AantalCalorien: 600,
-		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
+		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2018/09/14/11/12/food-3676796_960_720.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
-		MenuNaam: "Tagliatelli4",
+		MenuNaam: "Mexicaans",
 		AantalCalorien: 300,
-		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
+		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795__340.jpg",
 		RestaurantNaam: "Giovanni"
 	}, {
-		MenuNaam: "Tagliatelli5",
+		MenuNaam: "Frans",
 		AantalCalorien: 100,
-		MenuPlaatjeUrl: "https://www.solo.be/uploadedimages/recepten/afbeeldingen/642/436/27122010125838_tagliatelle-zalm-prei.jpg",
+		MenuPlaatjeUrl: "https://cdn.pixabay.com/photo/2015/05/02/06/47/gourmet-749562__340.jpg",
 		RestaurantNaam: "Giovanni"
 	},
 ]
