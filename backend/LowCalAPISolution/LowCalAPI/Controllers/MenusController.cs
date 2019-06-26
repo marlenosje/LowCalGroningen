@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 using LowCalAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace LowCalAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class MenusController : ControllerBase
     {
         // GET api/menus
+        [EnableCors]
         [HttpGet ("{calorieen}")]
         public ActionResult<IEnumerable<Entities.Menu>> Get(int calorieen)
         {

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LowCalAPI.Entities;
+using Microsoft.AspNetCore.Cors;
 
 
 namespace LowCalAPI.Controllers
@@ -14,6 +15,7 @@ namespace LowCalAPI.Controllers
     public class RestaurantsController : ControllerBase
     {
         // GET api/restaurants
+        [EnableCors]
         [HttpGet]
         public ActionResult<IEnumerable<Entities.Restaurant>> GetAllRestaurants()
         {
